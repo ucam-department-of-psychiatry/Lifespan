@@ -6,7 +6,7 @@ This github repository contains the code necessary to replicate the Lifespan Bra
 * GNU R Shiny App: [http://brainchart.io/](http://brainchart.io/)
 * Peer-reviewed publication: PENDING
 
-The repository also contains the objects necessary to reproduce the fitted curves, as see in the in the articles and web-app above.
+The repository also contains the objects necessary to reproduce the fitted curves, as seen in the article and web-app above.
 
 This repository does not contain any of the datasets. We do not have permission to distributed many of the studies included within the published analyses. However, many are available upon request from the original study groups; see the relevant supplementary material for details of all the studies.
 

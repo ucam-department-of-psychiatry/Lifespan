@@ -43,11 +43,31 @@ First we will illustrate example usage of the code. Then we will document the in
 
 #### Obtaining population curves
 
-
+The following code will load and plot the population median (50th centile) across the lifespan for Grey Matter Volume (GMV).
 
 ```r
-## add example
+source("100.common-variables.r")
+source("101.common-functions.r")
+
+source("300.variables.r")
+source("301.functions.r")
+
+FIT <- readRDS("Share/FIT_GMV.rds")
+
+POP.CURVE.LIST <- list(AgeTransformed=seq(log(90),log(365*95),length.out=2^4),sex=c("Female","Male"))
+POP.CURVE.RAW <- do.call( what=expand.grid, args=POP.CURVE.LIST )
+
+CURVE <- Apply.Param(NEWData=POP.CURVE.RAW, FITParam=FIT$param )
+
+plot( PRED.m500.pop ~ AgeTransformed, data=CURVE[CURVE$sex=="Female",],type="l")
+
+plot( I(10000*PRED.m500.pop) ~ AgeTransformed, data=CURVE[CURVE$sex=="Female",],type="l")
+
 ```
+
+![sample](Share/sample.png)
+
+Note: For numerical stability, we use transformations of covariates, these must be undone to work on the original scales.
 
 ### Script documentation
 

@@ -248,7 +248,7 @@ if( 1 ) {
     
     DATA.PATH <- file.path( RDS.DIR, DATA.TAG )
     if( !dir.exists( DATA.PATH ) ) {
-        dir.create( DATA.PATH )
+        dir.create( DATA.PATH, recursive=TRUE)
     }
     TOSAVE <- DATA[ , unlist(attr(DATA,"columns")) ]
 

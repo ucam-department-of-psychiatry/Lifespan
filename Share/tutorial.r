@@ -17,17 +17,18 @@ getSmo(EXTRACT$FIT.FULL,what="mu")$power
 
 HOLDER$MODEL <- Make.bfpNA.model.from.extract( EXTRACT$param )
 saveRDS( HOLDER$MODEL, file.path( PATHS$MODEL, "base200.GGalt.bfpNA.rds" ) )
-EXTRACT.bfp <- Extract.Wrapper( HOLDER, Fit.Full=FALSE, start.from=EXTRACT$FIT ) ## helpful to start.from, improves convergence speed [expect 5 iterations]
+EXTRACT.bfp <- Extract.Wrapper( HOLDER, Fit.Full=FALSE, start.from=EXTRACT$FIT ) ## helpful to start.from, improves convergence speed [expect 5ish iterations]
 Save.Extracted( EXTRACT.bfp, PATHS, "base200.GGalt.bfpNA.rds", Save.Full=FALSE )
 
 ## 320-script
 EXTRACT.bfp$param$BIC ## compare BIC on all fitted models
-file.copy(from=file.path(PATHS$FIT.EXTRACT,"base200.GGalt.bfpNA.rds"),to=file.path(PATHS$PATH,"MODEL.rds"))
-file.copy(from=file.path(PATHS$FIT.EXTRACT,"base200.GGalt.bfpNA.rds"),to=file.path(PATHS$PATH,"FIT.EXTRACT.rds"))
-## or
-file.symlink(from=file.path("MODEL","base200.GGalt.bfpNA.rds"),to=file.path(PATHS$PATH,"MODEL.rds"))
-file.symlink(from=file.path("FIT.EXTRACT","base200.GGalt.bfpNA.rds"),to=file.path(PATHS$PATH,"FIT.EXTRACT.rds"))
-
+if( 0 ) {
+    file.copy(from=file.path(PATHS$MODEL,"base200.GGalt.bfpNA.rds"),to=file.path(PATHS$PATH,"MODEL.rds"))
+    file.copy(from=file.path(PATHS$FIT.EXTRACT,"base200.GGalt.bfpNA.rds"),to=file.path(PATHS$PATH,"FIT.EXTRACT.rds"))
+} else { ## or use symbolic links (if available on your system, ie *unix/mac)
+    file.symlink(from=file.path("MODEL","base200.GGalt.bfpNA.rds"),to=file.path(PATHS$PATH,"MODEL.rds"))
+    file.symlink(from=file.path("FIT.EXTRACT","base200.GGalt.bfpNA.rds"),to=file.path(PATHS$PATH,"FIT.EXTRACT.rds"))
+}
 ## 330-script (and 340-script)
 HOLDER <- Load.Subset.Wrapper( Tag="omega-Wand__.n0000", LSubset=TRUE, LModel=TRUE, LFit=TRUE )
 
@@ -36,6 +37,7 @@ BOOT[[1]] <- Boot.Function(n=1,Base.Seed=12345,Holder=HOLDER)
 BOOT[[2]] <- Boot.Function(n=2,Base.Seed=12345,Holder=HOLDER)
 BOOT[[3]] <- Boot.Function(n=3,Base.Seed=12345,Holder=HOLDER)
 for( NUM in 4:100 ) { ## 100s of bootstrap replicates required
+    cat("Bootstrap replicate: ",NUM,"\n")
     BOOT[[NUM]] <- Boot.Function(n=NUM,Base.Seed=12345,Holder=HOLDER)
 }
 

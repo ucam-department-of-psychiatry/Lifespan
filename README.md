@@ -2,6 +2,7 @@
 
 
   * [Introduction](#introduction)
+  * [Datasets](#Datasets)
   * [Lifespan curve estimates (and uncertainty)](#lifespan-curve-estimates--and-uncertainty-)
   * [Scripts](#scripts)
     + [Example usage](#example-usage)
@@ -33,6 +34,10 @@ This github repository contains the code necessary to replicate the Lifespan Bra
 The repository also contains the objects necessary to reproduce the fitted curves, as seen in the article and web-app above.
 
 This repository does not contain any of the datasets. We do not have permission to distributed many of the studies included within the published analyses. However, many are available upon request from the original study groups; see the relevant supplementary material for details of all the studies.
+
+## Datasets
+
+Out manuscript lists an extensive description of all datasets currently included in the models, this [linked](https://docs.google.com/spreadsheets/d/15UbnykpXnISXzgEiU9sECyuHXlqirY63V4oTwkuY-58/edit?usp=sharing) form contains a more direct overview of how datasets were accessed (i.e., by direct correspondence or through DUA's) and which datasets were open. Where available we provide hyperlinks to the form or website containing instructions for obtaining data access.
 
 ## Lifespan curve estimates (and uncertainty)
 

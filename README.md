@@ -29,7 +29,9 @@ This github repository contains the code necessary to replicate the Lifespan Bra
 
 * Paper: [Bethlehem, Seidlitz, White et al. Nature 2022](https://www.nature.com/articles/s41586-022-04554-y)
 * GNU R Shiny App: [http://brainchart.io/](http://brainchart.io/)
-* Peer-reviewed publication: PENDING
+* Peer-reviewed publication:    
+  + [Bethlehem, Seidlitz, White et al. Nature, 2022](https://www.nature.com/articles/s41586-022-04554-y)
+  + Alexander-Bloch, et al. JAMA Psychiatry, 2022
 
 The repository also contains the objects necessary to reproduce the fitted curves, as seen in the article and web-app above.
 

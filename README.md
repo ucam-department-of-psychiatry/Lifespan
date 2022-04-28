@@ -27,7 +27,7 @@
 
 This github repository contains the code necessary to replicate the Lifespan BrainChart project:
 
-* bioRxiv pre-print: [https://www.biorxiv.org/content/10.1101/2021.06.08.447489v1](https://www.biorxiv.org/content/10.1101/2021.06.08.447489v1)
+* Paper: [Bethlehem, Seidlitz, White et al. Nature 2022](https://www.nature.com/articles/s41586-022-04554-y)
 * GNU R Shiny App: [http://brainchart.io/](http://brainchart.io/)
 * Peer-reviewed publication: PENDING
 

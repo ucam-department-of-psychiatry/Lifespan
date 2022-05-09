@@ -2,7 +2,6 @@
 
 
   * [Introduction](#introduction)
-  * [Datasets](#Datasets)
   * [Lifespan curve estimates (and uncertainty)](#lifespan-curve-estimates--and-uncertainty-)
   * [Scripts](#scripts)
     + [Example usage](#example-usage)
@@ -27,19 +26,13 @@
 
 This github repository contains the code necessary to replicate the Lifespan BrainChart project:
 
-* Paper: [Bethlehem, Seidlitz, White et al. Nature 2022](https://www.nature.com/articles/s41586-022-04554-y)
+* bioRxiv pre-print: [https://www.biorxiv.org/content/10.1101/2021.06.08.447489v1](https://www.biorxiv.org/content/10.1101/2021.06.08.447489v1)
 * GNU R Shiny App: [http://brainchart.io/](http://brainchart.io/)
-* Peer-reviewed publication:    
-  + [Bethlehem, Seidlitz, White et al. Nature, 2022](https://www.nature.com/articles/s41586-022-04554-y)
-  + Alexander-Bloch, et al. JAMA Psychiatry, In Press
+* Peer-reviewed publication: PENDING
 
 The repository also contains the objects necessary to reproduce the fitted curves, as seen in the article and web-app above.
 
-This repository does not contain any of the datasets. We do not have permission to distributed many of the studies included within the published analyses. However, many are available upon request from the original study groups; see the relevant supplementary material for details of all the studies. Before contacting us with specific queries about the models, data or tool please have a look at our [FAQ](./FAQ.md) page.
-
-## Datasets
-
-Out manuscript lists an extensive description of all datasets currently included in the models, this [linked](https://docs.google.com/spreadsheets/d/15UbnykpXnISXzgEiU9sECyuHXlqirY63V4oTwkuY-58/edit?usp=sharing) form contains a more direct overview of how datasets were accessed (i.e., by direct correspondence or through DUA's) and which datasets were open. Where available we provide hyperlinks to the form or website containing instructions for obtaining data access.
+This repository does not contain any of the datasets. We do not have permission to distributed many of the studies included within the published analyses. However, many are available upon request from the original study groups; see the relevant supplementary material for details of all the studies.
 
 ## Lifespan curve estimates (and uncertainty)
 

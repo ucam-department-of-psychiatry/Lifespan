@@ -25,7 +25,7 @@ Print.Disclaimer <- function( ) {
 ##
 ##### The code is associated with the publication:
 ##
-## [ADD CITATION]
+## Bethlehem, Seidlitz, White et al. (2022). Nature. https://www.nature.com/articles/s41586-022-04554-y
 ##
 ##### Code written by:
 ##
@@ -34,7 +34,7 @@ Print.Disclaimer <- function( ) {
 ##
 ##### Version
 ##
-## v10.r10 (2021-05-13)
+## v11.r1 (2022-05-13)
 ##
 ")
     

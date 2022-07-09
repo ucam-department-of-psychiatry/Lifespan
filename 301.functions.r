@@ -73,7 +73,7 @@ Extract.Wrapper <- function( Holder, Store.Full=FALSE, ... ) {
         if( Store.Full ) {
             OBJECT$FIT.FULL <- FIT.FULL
         }
-        OBJECT$param <- Extract.Param( FIT.FULL )
+        OBJECT$param <- Extract.Param( FIT.FULL, Holder$SUBSET )
         OBJECT$diagnostics <- NULL
         OBJECT$iter <- FIT.FULL$iter
     }
@@ -95,7 +95,7 @@ Extract.Summary <- function( Data=NULL, Stratified=NULL, Index=NULL ) {
     return(LIST)
 }
 
-Extract.Param <- function( object ) {
+Extract.Param <- function( object, HSubset ) {
     ## This function extracts the necessary information from a GAMLSS model fit object
 
     ## Extend this to include any information from a fitted model object that may be important
@@ -153,6 +153,28 @@ Extract.Param <- function( object ) {
     PARAM$N <- object$N
     PARAM$df.fit <- object$df.fit
     PARAM$df.residual <- object$df.residual
+
+    if( 1 ) {
+        ## Extra information added to ParamObj, required for out-of-sample estimation when we do not have access to SUBSET
+        FactorColumns <- names(which(sapply(HSubset[unlist(attr(object,"model")$covariates[c("COND","X","BY","OTHER")])],is.factor)))
+        attr(PARAM,"levels") <- lapply(HSubset[FactorColumns],levels)
+        attr(PARAM,"transformations") <- attr(HSubset,"Transformations")
+
+        if(!is.null(attr(object,"model")$contrasts)){
+            FactorContrasts <- list()
+            for ( LAB in names(attr(object,"model")$contrasts) ) {
+                if( is.factor(HSubset[[LAB]]) ) {
+                    FactorContrasts[[LAB]] <- get(attr(object,"model")$contrasts[[LAB]])( levels(HSubset[[LAB]]) )
+                } else {
+                    stop("Have provided contrasts for a non-factor column, ",LAB)
+                }
+            }
+            attr(PARAM,"contrasts") <- FactorContrasts
+        } else {
+            attr(PARAM,"contrasts") <- NULL
+        }
+    }
+
     
     attr(PARAM,"model") <- attr(object,"model")
     class(PARAM) <- c("ParamObj","list")
